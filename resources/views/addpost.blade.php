@@ -1,0 +1,41 @@
+@extends('layouts.app')
+
+@section('title-block')
+
+Add blog
+
+@endsection
+
+@section('content')
+
+<div class="header flex-column">
+
+    <div class="blog">Add post</div>
+
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach()
+        </ul>
+    </div>
+    @endif
+
+    <form class="add-form" action="{{route('postform')}}" method="post" enctype="multipart/form-data">
+        @csrf
+
+        <p>Title:</p>
+        <input class="form_laravel" type="text" name="name" id="name" placeholder="">
+        <p>Text:</p>
+        <textarea class="form_laravel" type="textarea" name="fulltext" id="fulltext" placeholder=""></textarea>
+        <p>Picture:</p>
+        <input type="file" name="image" id="image" accept="image/*">
+        <button class="btnSubm" type="submit">Save</button>
+        
+    </form>
+    
+</div>
+
+@endsection
+
