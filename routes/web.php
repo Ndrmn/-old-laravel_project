@@ -2,14 +2,14 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
-Route::get('/blog', function () {
-    return view('blog');
-});
+Route::get('/blog/{{id}}', 'App\Http\Controllers\PostController@showonepost')->name('one-post');
+
+Route::get('/blog', 'App\Http\Controllers\PostController@getBlogData')->name('getblog');
 
 Route::get('/addpost', function () {
     return view('addpost');
-});
+})->name('addpost');
 
 Route::post('/add', 'App\Http\Controllers\PostController@add')->name('postform');

@@ -12,14 +12,17 @@ Blog
 
     <div class="blog">Blog</div>
 
-    <div class="card" style="width: 50%;">
-        <img src="https://img.freepik.com/premium-photo/kyiv-city-panorama-ukraine_173948-2145.jpg" class="card-img-top" alt="...">
+    @foreach($data as $elem)
+
+    <div class="card" style="width: 50%; margin-bottom: 20px;">
+        <img src="{{asset('/storage/' . $elem->image)}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">{{$elem->name}}</h5>
+            <a href="{{asset('/blog/' . $elem->id)}}" class="btn btn-primary">More</a>
         </div>
     </div>
+
+    @endforeach
     
 </div>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('title-block')
 
-Add blog
+Add post
 
 @endsection
 
@@ -38,4 +38,3 @@ Add blog
 </div>
 
 @endsection
-
