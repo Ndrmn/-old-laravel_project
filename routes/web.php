@@ -4,7 +4,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/blog/{{id}}', 'App\Http\Controllers\PostController@showonepost')->name('one-post');
+Route::get('/blog/{id}', 'App\Http\Controllers\PostController@showonepost')->name('onepost');
 
 Route::get('/blog', 'App\Http\Controllers\PostController@getBlogData')->name('getblog');
 

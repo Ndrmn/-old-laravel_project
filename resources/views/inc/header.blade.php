@@ -4,7 +4,7 @@
 			<header class="header block">
 				<a class="header__logo" href="">
 					<div class="header__icon">
-						<img class="img" src="img/logo.svg" alt="">	
+						<img class="img" src="../img/logo.svg" alt="">	
 					</div>
 					<span class="header__logoText">Lasles<b>VPN</b></span>
 				</a>

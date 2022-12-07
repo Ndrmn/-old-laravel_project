@@ -4,7 +4,7 @@
                         <div class="footer__info">
                             <a href="" class="footer__logo">
                                 <div class="footer__pic">
-                                    <img class="img" src="img/logo.svg" alt="">	
+                                    <img class="img" src="../img/logo.svg" alt="">	
                                 </div>
                                 <span class="footer__name">Lasles<b>VPN</b></span>
                             </a>
@@ -14,17 +14,17 @@
                             <div class="footer__socialNetworks">
                                 <a href="">
                                     <div class="footer__socialIcons">
-                                        <img class="img" src="img/facebook.png" alt="">
+                                        <img class="img" src="../img/facebook.png" alt="">
                                     </div>
                                 </a>
                                 <a href="">
                                     <div class="footer__socialIcons">
-                                        <img class="img" src="img/twitter.png" alt="">
+                                        <img class="img" src="../img/twitter.png" alt="">
                                     </div>
                                 </a>
                                 <a href="">
                                     <div class="footer__socialIcons">
-                                        <img class="img" src="img/instagram.png" alt="">
+                                        <img class="img" src="../img/instagram.png" alt="">
                                     </div>
                                 </a>
                             </div>
