@@ -1,15 +1,11 @@
 <?php
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [App\Http\Controllers\PostController::class, 'home_index'])->name('home.index');
 
-Route::get('/blog/{id}', 'App\Http\Controllers\PostController@showonepost')->name('onepost');
+Route::get('/blog', [App\Http\Controllers\PostController::class, 'index'])->name('blog.index');
 
-Route::get('/blog', 'App\Http\Controllers\PostController@getBlogData')->name('getblog');
+Route::get('/addpost', [App\Http\Controllers\PostController::class, 'create'])->name('blog.create');
 
-Route::get('/addpost', function () {
-    return view('addpost');
-})->name('addpost');
+Route::post('/add', [App\Http\Controllers\PostController::class, 'store'])->name('blog.store');
 
-Route::post('/add', 'App\Http\Controllers\PostController@add')->name('postform');
+Route::get('/blog/{blog}', [App\Http\Controllers\PostController::class, 'show'])->name('blog.show');

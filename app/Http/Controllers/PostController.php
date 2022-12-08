@@ -8,34 +8,42 @@ use App\Models\Blog;
 
 class PostController extends Controller {
 
-    public function add(AddpostRequest $req) {
-        // $validation = $req->validate([
-        //     'name' => 'required|min:5|max:50',
-        //     'fulltext' => 'required|min:20'
-        // ]);
+    public function home_index() {
 
-        $path = $req->file('image')->store('uploads','public');
+        return view('home.index');
+    }
+
+    public function index() {
+
+        return view('blog.index', ['data' => Blog::orderBy('id', 'desc')->get()]);
+    }
+
+    public function create() {
+
+        return view('blog.create');
+    }
+
+    public function store(AddpostRequest $request) {
+
+        $path = $request->file('image')->store('uploads','public');
 
         $blog = new Blog();
-        $blog->name = $req->input('name');
-        $blog->fulltext = $req->input('fulltext');
+        $blog->name = $request->input('name');
+        $blog->fulltext = $request->input('fulltext');
         $blog->image = $path;
 
         $blog->save();
 
-        return redirect()->route('getblog');
+        return redirect()->route('blog.index');
     }
 
-    public function getBlogData() {
+    // public function show($id) {
 
-        // $blog = new Blog();
-        // dd($blog->all());
-        $blog = new Blog();
-        return view('blog', ['data' => $blog->orderBy('id', 'desc')->get()]);
-    }
+    //     return view('blog.show', ['data' => Blog::find($id)]);
+    // }
 
-    public function showonepost($id) {
-        $blog = new Blog();
-        return view('onepost', ['data' => $blog->find($id)]);
+    public function show(Blog $blog) {
+
+        return view('blog.show', ['data' => $blog]);
     }
 }
