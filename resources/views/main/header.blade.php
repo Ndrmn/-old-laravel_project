@@ -13,15 +13,15 @@
 				</div>
 				<nav class="header__nav hidden">
 					<ul class="header__menu">
-						<li><a href="../" class="header__button">Home</a></li>
+						<li><a href="../" class="header__button"><b>Home</b></a></li>
 						<div class="header__line"></div>
 						<li><a href="" class="header__button">Features</a></li>
 						<div class="header__line"></div>
 						<li><a href="" class="header__button">Pricing</a></li>
 						<div class="header__line"></div>
-						<li><a href="/blog" class="header__button">Blog</a></li>
+						<li><a href="/blog" class="header__button"><b>Blog</b></a></li>
 						<div class="header__line"></div>
-						<li><a href="/addpost" class="header__button">Add post</a></li>
+						<li><a href="/addpost" class="header__button"><b>Add post</b></a></li>
 					</ul>
 				</nav>
 				<div class="header__sign hidden">
