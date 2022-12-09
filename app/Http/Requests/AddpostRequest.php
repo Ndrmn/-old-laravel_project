@@ -25,21 +25,21 @@ class AddpostRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:50',
-            'fulltext' => 'required|min:20'
+            'full_text' => 'required|min:20'
         ];
     }
 
     public function attributes() {
         return[
             'name' => 'Title',
-            'fulltext' => 'Text'
+            'full_text' => 'Text'
         ];
     }
 
     // public function messages() {
     //     return [
     //         'name.required' => 'Поле Title является обязательным',
-    //         'fulltext.required' => 'Поле Text является обязательным'
+    //         'full_text.required' => 'Поле Text является обязательным'
     //     ];
     // }
 }

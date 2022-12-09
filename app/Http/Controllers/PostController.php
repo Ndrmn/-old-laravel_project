@@ -4,46 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\AddpostRequest;
-use App\Models\Blog;
+use App\Models\Post;
 
 class PostController extends Controller {
 
-    public function home_index() {
-
-        return view('home.index');
-    }
-
     public function index() {
 
-        return view('blog.index', ['data' => Blog::orderBy('id', 'desc')->get()]);
+        return view('posts.index', ['data' => Post::orderBy('id', 'desc')->get()]);
     }
 
     public function create() {
 
-        return view('blog.create');
+        return view('posts.create');
     }
 
     public function store(AddpostRequest $request) {
 
-        $path = $request->file('image')->store('uploads','public');
+        Post::create([
+            'name' => $request->name,
+            'full_text' => $request->full_text,
+            'image' => $request->file('image')->store('uploads','public')
+        ]);
 
-        $blog = new Blog();
-        $blog->name = $request->input('name');
-        $blog->fulltext = $request->input('fulltext');
-        $blog->image = $path;
-
-        $blog->save();
-
-        return redirect()->route('blog.index');
+        return redirect()->route('posts.index');
     }
 
-    // public function show($id) {
+    public function show(Blog $post) {
 
-    //     return view('blog.show', ['data' => Blog::find($id)]);
-    // }
-
-    public function show(Blog $blog) {
-
-        return view('blog.show', ['data' => $blog]);
+        return view('posts.show', ['data' => $post]);
     }
 }

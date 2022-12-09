@@ -19,9 +19,9 @@
 						<div class="header__line"></div>
 						<li><a href="" class="header__button">Pricing</a></li>
 						<div class="header__line"></div>
-						<li><a href="/blog" class="header__button"><b>Blog</b></a></li>
+						<li><a href="/posts" class="header__button"><b>Blog</b></a></li>
 						<div class="header__line"></div>
-						<li><a href="/addpost" class="header__button"><b>Add post</b></a></li>
+						<li><a href="/posts/create" class="header__button"><b>Add post</b></a></li>
 					</ul>
 				</nav>
 				<div class="header__sign hidden">
